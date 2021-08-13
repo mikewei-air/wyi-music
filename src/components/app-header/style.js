@@ -24,13 +24,14 @@ export const HeaderLeft = styled.div`
         width: 157px;
         height: 100%;
         background-position: 0 0;
+        text-indent: -9999px;
     }
     .select-list {
-    display: flex;
-    line-height: 70px;
+        display: flex;
+        line-height: 70px;
     
     .select-item {
-      position: relative;
+        position: relative;
       a {
         display: block;
         padding: 0 20px;
