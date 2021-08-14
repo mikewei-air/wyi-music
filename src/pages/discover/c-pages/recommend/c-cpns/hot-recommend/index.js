@@ -10,7 +10,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getHotRecommendsAction } from '../../store/actionCreators'
 
-import { Hot_Recommend_limit } from '@/common/constant'
+import { HOT_RECOMMEND_LIMIT } from '@/common/constant'
 
 export default memo(function WYiHotRecommend() {
 
@@ -20,7 +20,7 @@ export default memo(function WYiHotRecommend() {
     }),shallowEqual)
 
     useEffect(()=>{
-        dispatch(getHotRecommendsAction(Hot_Recommend_limit))
+        dispatch(getHotRecommendsAction(HOT_RECOMMEND_LIMIT))
     },[dispatch])
 
     return (
