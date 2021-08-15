@@ -7,6 +7,7 @@ import WYiDjradio from '@/pages/discover/c-pages/djradio'
 import WYiRanking from '@/pages/discover/c-pages/ranking'
 import WYiRecommend from '@/pages/discover/c-pages/recommend'
 import WYiSongs from '@/pages/discover/c-pages/songs'
+import WYiPlayer from '@/pages/player'
 
 
 import WYiFriend from '@/pages/friend'
@@ -54,6 +55,10 @@ const routes = [
             {
                 path: '/discover/songs',
                 component: WYiSongs
+            },
+            {
+                path: '/discover/player',
+                component: WYiPlayer
             },
         ]
     },

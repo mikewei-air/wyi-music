@@ -8,6 +8,7 @@ import store from './store'
 
 import WYiAppHeader from '@/components/app-header'
 import WYiAppFooter from '@/components/app-footer'
+import WYiAppPlayBar from '@/pages/player/app-player-bar'
 
 
 export default memo(function App() {
@@ -17,6 +18,7 @@ export default memo(function App() {
                 <WYiAppHeader/>
                 {renderRoutes(routes)}
                 <WYiAppFooter/>
+                <WYiAppPlayBar/>
             </HashRouter>
         </Provider>
     )

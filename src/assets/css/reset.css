@@ -106,3 +106,16 @@ body, html, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, header, menu, sectio
     text-indent: -9999px;
     background: url(../img/sprite_cover.png) no-repeat -145px -57px;
   }
+
+  .sprite_player {
+    background: url(../img/playbar_sprite.png) no-repeat 0 9999px;
+  }
+  
+  .lyric-class .ant-message-notice-content {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+  }
