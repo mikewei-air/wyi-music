@@ -28,6 +28,10 @@ export const Control = styled.div`
   display: flex;
   align-items: center;
 
+  .prev, .play, .next {
+    cursor: pointer;
+  }
+
   .prev, .next {
     width: 28px;
     height: 28px;
