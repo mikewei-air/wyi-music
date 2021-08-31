@@ -40,7 +40,12 @@ export const changeSequenceAction = sequence => {
     }
 }
 
-
+export const changeCurrentLyricIndexAction = currentLyricIndex => {
+    return {
+        type: actionTypes.CHANGE_CURRENT_LYRIC_INDEX,
+        currentLyricIndex
+    }
+}
 
 export function getSongDetailAction(ids){
     return (dispatch,getState) => {

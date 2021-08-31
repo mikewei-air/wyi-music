@@ -1,10 +1,13 @@
 import React, { memo,useEffect  } from 'react'
 import moment from 'moment'
 
-import {getSongDetailAction,changeSequenceAction,changeCurrentSong} from '../store/actionCreator'
+import {getSongDetailAction,
+        changeSequenceAction,
+        changeCurrentSong,
+        changeCurrentLyricIndexAction } from '../store/actionCreator'
 import { getSizeImage,getPlaySong } from '@/utils/format-utils';
 
-import {Slider} from 'antd';
+import {Slider,message} from 'antd';
 import { PlaybarWrapper,Control,PlayInfo,Operator } from './style'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { useRef } from 'react';
@@ -18,9 +21,11 @@ export default memo(function WYiAppPlayBar() {
 
 
     const dispatch = useDispatch()
-    const {currentSong,sequence} = useSelector((state)=>({
+    const {currentSong,sequence,lyricList,currentLyricIndex} = useSelector((state)=>({
             currentSong: state.getIn(["player","currentSong"]),
-            sequence: state.getIn(["player","sequence"])
+            sequence: state.getIn(["player","sequence"]),
+            lyricList: state.getIn(["player","lyricList"]),
+            currentLyricIndex: state.getIn(["player","currentLyricIndex"])
     }),shallowEqual)
 
     useEffect(()=>{
@@ -53,9 +58,32 @@ export default memo(function WYiAppPlayBar() {
     },[isPlaying])
 
     function updateTime(e){
+        const audioCurrentTime = e.target.currentTime*1000
         if(!isChange){
-            setCurrentTime(e.target.currentTime*1000)
+            setCurrentTime(audioCurrentTime)
             setProgress(currentTime / duration * 100)
+        }
+
+        //获取当前歌词
+        let index = 0
+        for(let i = 0; i < lyricList.length; i++){
+            if(audioCurrentTime < lyricList[i].time){
+                index = i
+                break;
+            }
+        }
+        // console.log(currentLyricIndex);
+        if(currentLyricIndex !== index-1){
+            dispatch(changeCurrentLyricIndexAction(index-1))
+            const content = lyricList[index-1] && lyricList[index-1].content
+            if(content){
+                message.open({
+                    content,
+                    key: 'lyric',
+                    duration: 0,
+                    className: 'lyric-class'
+                })
+            }
         }
     }
 

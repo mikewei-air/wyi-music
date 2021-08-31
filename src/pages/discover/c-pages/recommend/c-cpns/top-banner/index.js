@@ -24,7 +24,9 @@ export default memo(function WYiTopBanner() {
     },[dispatch])
 
     const bannerChange = useCallback((from, to)=>{
-        setCurrentIndex(to)
+        setTimeout(()=>{
+            setCurrentIndex(to)
+        },0)
     },[])
 
     const bgImageUrl = topBanners[currentIndex] && (topBanners[currentIndex].imageUrl + "?imageView&blur=40x20")

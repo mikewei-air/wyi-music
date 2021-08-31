@@ -28,6 +28,9 @@ export const FooterLeft = styled.div`
             margin: 0 10px;
             color: #999;
         }
+        span:last-child {
+            display: none;
+        }
     }
 
     .copyright {

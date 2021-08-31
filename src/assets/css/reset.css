@@ -118,4 +118,6 @@ body, html, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, header, menu, sectio
     bottom: 50px;
     background-color: rgba(0, 0, 0, .5);
     color: #fff;
+    background-image: linear-gradient(to right, red, blue);
+    border-radius: 14px;
   }

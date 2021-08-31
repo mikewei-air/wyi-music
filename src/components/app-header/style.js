@@ -21,7 +21,7 @@ export const HeaderLeft = styled.div`
     display: flex;
     .logo{
         display: block;
-        width: 157px;
+        width: 167px;
         height: 100%;
         background-position: 0 0;
         text-indent: -9999px;

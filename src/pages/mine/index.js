@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react';
 
-export default function WYiMine() {
-    return (
-        <div>
-            <h2>WYiMine</h2>
+import { MineWrapper } from './style';
+
+export default memo(function WYiMine() {
+  return (
+    <MineWrapper>
+      <div className="content wrap-v2">
+        <div className="pic">
+          <a className="login" href="/#">立即登录</a>
         </div>
-    )
-}
+      </div>
+    </MineWrapper>
+  )
+})

@@ -1,9 +1,17 @@
-import React from 'react'
 
-export default function WYiFriend() {
-    return (
-        <div>
-            <h2>WYiFriend</h2>
+import React, { memo } from 'react';
+
+import { FriendWrapper } from './style';
+
+export default memo(function WYiFriend() {
+  return (
+    <FriendWrapper>
+      <div className="content wrap-v2">
+        <div className="pic">
+          <a className="login" href="/#">立即登录</a>
         </div>
-    )
-}
+      </div>
+    </FriendWrapper>
+  )
+})
+
